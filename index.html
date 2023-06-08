@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bread Flour Ratio Calculator</title>
+  <title>Bread Ingredients Calculator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -49,27 +49,32 @@
 </head>
 <body>
   <div class="container">
-    <h1>Bread Flour Ratio Calculator</h1>
+    <h1>Bread Ingredients Calculator</h1>
     <label for="flour">Flour (grams):</label>
     <input type="number" id="flour" required>
 
-    <label for="water">Water (grams):</label>
-    <input type="number" id="water" required>
-
-    <button onclick="calculateRatio()">Calculate</button>
+    <button onclick="calculateIngredients()">Calculate</button>
 
     <div id="result"></div>
   </div>
 
   <script>
-    function calculateRatio() {
+    function calculateIngredients() {
       var flour = parseFloat(document.getElementById('flour').value);
-      var water = parseFloat(document.getElementById('water').value);
 
-      var ratio = (water / flour).toFixed(2);
+      var waterPercentage = 65;
+      var saltPercentage = 2;
+      var yeastPercentage = 15;
+
+      var water = (flour * waterPercentage / 100).toFixed(2);
+      var salt = (flour * saltPercentage / 100).toFixed(2);
+      var yeast = (flour * yeastPercentage / 100).toFixed(2);
 
       var result = document.getElementById('result');
-      result.innerHTML = 'Bread Flour Ratio: ' + ratio;
+      result.innerHTML = '<strong>Ingredients:</strong><br>' +
+        'Water: ' + water + ' grams<br>' +
+        'Salt: ' + salt + ' grams<br>' +
+        'Yeast: ' + yeast + ' grams';
     }
   </script>
 </body>
