@@ -78,17 +78,17 @@
       var flour = parseFloat(document.getElementById('flour').value);
       var waterPercentage = parseFloat(waterSlider.value);
       var saltPercentage = 2;
-      var yeastPercentage = 15;
+      var starterPercentage = 15;
 
       var water = (flour * waterPercentage / 100).toFixed(2);
       var salt = (flour * saltPercentage / 100).toFixed(2);
-      var yeast = (flour * yeastPercentage / 100).toFixed(2);
+      var starter = (flour * starterPercentage / 100).toFixed(2);
 
       var result = document.getElementById('result');
       result.innerHTML = '<strong>Ingredients:</strong><br>' +
         'Water: ' + water + ' grams<br>' +
         'Salt: ' + salt + ' grams<br>' +
-        'Yeast: ' + yeast + ' grams';
+        'Starter: ' + starter + ' grams';
     }
   </script>
 </body>
